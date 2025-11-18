@@ -61,11 +61,34 @@ body {
   overflow-x: hidden;
 }
 
-/* Hide default cursor on desktop for custom cursor */
+/* Optional: Hide default cursor on desktop for custom cursor 
+   Only applies when .custom-cursor-enabled class is present on body
+   This improves accessibility by making custom cursor opt-in */
 @media (min-width: 1024px) {
-  * {
+  body.custom-cursor-enabled * {
     cursor: none !important;
   }
+  
+  /* Ensure interactive elements still show pointer */
+  body.custom-cursor-enabled a,
+  body.custom-cursor-enabled button,
+  body.custom-cursor-enabled [role="button"],
+  body.custom-cursor-enabled input[type="submit"],
+  body.custom-cursor-enabled input[type="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Focus styles for keyboard navigation - Critical for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* ============================================================================
@@ -149,6 +172,140 @@ body {
 .section-padding {
   padding-top: var(--space-section);
   padding-bottom: var(--space-section);
+}
+
+/* ============================================================================
+   HERO BACKGROUND VIDEO - CINEMATIC
+   ============================================================================ */
+
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Dark gradient overlay - Electric Indigo blend */
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.85) 0%,
+    rgba(76, 69, 245, 0.3) 50%,
+    rgba(17, 24, 39, 0.95) 100%
+  );
+  background-blend-mode: multiply;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Additional bottom gradient for content readability */
+.hero-video-overlay::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(
+    to top,
+    rgba(17, 24, 39, 0.95) 0%,
+    transparent 100%
+  );
+}
+
+/* Optional: Film grain texture for cinematic feel */
+.hero-video-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 2;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Fallback styles for reduced motion */
+.hero-video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-video-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Glassmorphic Navbar - Synced with Video Background */
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Enhanced glassmorphism on scroll */
+.navbar-glass.scrolled {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Mobile video optimization - reduce resolution */
+@media (max-width: 768px) {
+  .hero-video {
+    /* Scale down for mobile performance */
+    width: 120%;
+    height: 120%;
+  }
+  
+  .hero-video-grain {
+    display: none; /* Remove grain on mobile for performance */
+  }
+}
+
+/* Prefers reduced motion - show static poster */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+  
+  .hero-video-fallback {
+    display: block;
+  }
 }
 
 /* ============================================================================

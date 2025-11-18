@@ -40,10 +40,8 @@ export default function NavbarMinimal() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "backdrop-blur-xl bg-black/60 border-b border-white/10 shadow-[0_8px_32px_0_rgba(255,255,255,0.05)]" 
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 navbar-glass ${
+        isScrolled ? 'scrolled' : ''
       }`}
     >
       <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">

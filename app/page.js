@@ -1,6 +1,7 @@
 "use client";
 
 import HeroMakeReign from "@/components/HeroMakeReign";
+import HeroCinematicVideo from "@/components/HeroCinematicVideo";
 import WorkGrid from "@/components/WorkGrid";
 import ScrollReveal, { ScrollRevealLeft } from "@/components/ScrollReveal";
 import CounterAnimation from "@/components/CounterAnimation";
@@ -77,10 +78,14 @@ export default function Home() {
 
   return (
     <div className="bg-black">
-      {/* Hero Section */}
-      <div id="home">
-        <HeroMakeReign />
-      </div>
+      {/* Hero Section - Cinematic Video Background */}
+      <HeroCinematicVideo 
+        headline="Creating Visual Stories"
+        subtitle="We craft cinematic digital experiences that captivate and inspire."
+        primaryCTA={{ text: 'Start a Project', href: '/contact' }}
+        secondaryCTA={{ text: 'View Our Work', href: '#work' }}
+        showScrollIndicator={true}
+      />
 
       {/* About Snapshot Section */}
       <section className="section-padding bg-black">
@@ -406,13 +411,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Logos Section */}
+      {/* Client Success Section */}
       <section className="section-padding bg-black border-t border-white/10">
         <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
           <ScrollReveal>
-            <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-12">SELECT CLIENTS</span>
+            <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-12">INDUSTRIES WE SERVE</span>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-              {['Nike', 'Google', 'Microsoft', 'Spotify', 'Netflix', 'Instagram', 'Uber', 'PayPal', 'Stripe', 'Salesforce', 'Nordstrom', 'Patagonia'].map((client, index) => (
+              {['Fashion', 'Technology', 'Healthcare', 'Finance', 'Retail', 'Entertainment', 'Food & Beverage', 'Education', 'Real Estate', 'Automotive', 'Sports', 'Travel'].map((industry, index) => (
                 <ScrollReveal key={index} delay={index * 0.05}>
                   <motion.div
                     className="group relative"
@@ -421,8 +426,8 @@ export default function Home() {
                   >
                     {/* Glassmorphic Container */}
                     <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl p-8 flex items-center justify-center aspect-square hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
-                      <span className="text-white/40 text-base lg:text-lg font-bold uppercase tracking-wide group-hover:text-white transition-all duration-300 group-hover:scale-110">
-                        {client}
+                      <span className="text-white/40 text-base lg:text-lg font-bold uppercase tracking-wide group-hover:text-white transition-all duration-300 group-hover:scale-110 text-center">
+                        {industry}
                       </span>
                     </div>
 
