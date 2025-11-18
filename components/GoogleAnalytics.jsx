@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { pageview, GA_MEASUREMENT_ID } from "@/lib/analytics";
 
@@ -9,7 +9,7 @@ import { pageview, GA_MEASUREMENT_ID } from "@/lib/analytics";
  * Tracks page views automatically on route changes
  * Add this to your root layout
  */
-export default function GoogleAnalytics() {
+function AnalyticsTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -20,12 +20,19 @@ export default function GoogleAnalytics() {
     pageview(url);
   }, [pathname, searchParams]);
 
+  return null;
+}
+
+export default function GoogleAnalytics() {
   if (!GA_MEASUREMENT_ID) {
     return null;
   }
 
   return (
     <>
+      <Suspense fallback={null}>
+        <AnalyticsTracker />
+      </Suspense>
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
