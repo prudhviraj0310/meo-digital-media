@@ -1,4 +1,1 @@
-# Coolify Configuration
-# This file tells Coolify to use Docker build instead of Nixpacks
-
-buildPack: dockerfile
+buildPack=dockerfile
