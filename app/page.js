@@ -48,38 +48,43 @@ export default function Home() {
       title: "Luxury Fashion Brand Launch",
       description: "Complete digital transformation including brand identity, e-commerce platform, and influencer campaign that generated $2M in first quarter sales.",
       category: "Branding",
-      href: "/portfolio/luxury-fashion",
+      href: "/projects",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
     },
     {
       title: "Blockbuster Movie Campaign",
       description: "Viral meme marketing strategy and social media campaign that reached 50M+ impressions and drove record opening weekend sales.",
       category: "Marketing",
-      href: "/portfolio/movie-campaign",
+      href: "/projects",
+      image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200&auto=format&fit=crop",
     },
     {
       title: "SaaS Platform Development",
       description: "End-to-end product design and development for B2B SaaS platform with 10K+ active users and 98% satisfaction rate.",
       category: "Technology",
-      href: "/portfolio/saas-platform",
+      href: "/projects",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop",
     },
     {
       title: "Restaurant Chain Rebranding",
       description: "Complete brand refresh, menu design, and digital marketing that increased foot traffic by 150% across 20 locations.",
       category: "Branding",
-      href: "/portfolio/restaurant-rebrand",
+      href: "/projects",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
     },
     {
       title: "E-commerce Growth Strategy",
       description: "Performance marketing campaign and conversion optimization that achieved 400% ROI and 5x revenue growth in 6 months.",
       category: "Marketing",
-      href: "/portfolio/ecommerce-growth",
+      href: "/projects",
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop",
     },
   ];
 
   return (
     <div className="bg-black">
       {/* Hero Section - Cinematic Video Background */}
-      <HeroCinematicVideo 
+      <HeroCinematicVideo
         headline="Creating Visual Stories"
         subtitle="We craft cinematic digital experiences that captivate and inspire."
         primaryCTA={{ text: 'Start a Project', href: '/contact' }}
@@ -139,7 +144,7 @@ export default function Home() {
               </AnimatedHeading>
             </div>
           </ScrollReveal>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {serviceTiles.map((service, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
@@ -154,22 +159,22 @@ export default function Home() {
                     {/* Service Image */}
                     <div className="aspect-[16/9] overflow-hidden mb-6 rounded-xl relative">
                       <img
-                        src={service.image || `https://images.unsplash.com/photo-${
-                          [
-                            '1460925895917-afdab827c52f',
-                            '1558655146-9f40138edfeb',
-                            '1557804506-669a67965ba0',
-                            '1611162617474-5b21e879e113',
-                            '1551434678-e076c223a692',
-                          ][index % 5]
-                        }?q=80&w=1200&auto=format&fit=crop`}
+                        src={service.image || `https://images.unsplash.com/photo-${[
+                          '1460925895917-afdab827c52f',
+                          '1558655146-9f40138edfeb',
+                          '1557804506-669a67965ba0',
+                          '1611162617474-5b21e879e113',
+                          '1551434678-e076c223a692',
+                          '1557804506-669a67965ba0',
+                        ][index % 6]
+                          }?q=80&w=800&auto=format&fit=crop`}
                         alt={service.title}
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                       />
                       {/* Image Glow Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
-                    
+
                     <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
                       {service.title}
                     </h3>
@@ -233,9 +238,8 @@ export default function Home() {
               },
             ].map((caseStudy, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
-                  caseStudy.align === "right" ? "lg:flex-row-reverse" : ""
-                }`}>
+                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${caseStudy.align === "right" ? "lg:flex-row-reverse" : ""
+                  }`}>
                   {/* Image Side */}
                   <motion.div
                     className={`relative ${caseStudy.align === "right" ? "lg:order-2" : "lg:order-1"}`}
@@ -448,7 +452,7 @@ export default function Home() {
             {[
               { number: '200+', label: 'Projects Delivered' },
               { number: '150+', label: 'Happy Clients' },
-              { number: '50M+', label: 'Impressions Generated', suffix: 'M+' },
+              { number: '50', label: 'Impressions Generated', suffix: 'M+' },
               { number: '98%', label: 'Client Retention' },
             ].map((stat, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
@@ -459,7 +463,7 @@ export default function Home() {
                 >
                   {/* Glassmorphic Card */}
                   <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl p-8 lg:p-10 hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
-                    <div className="text-6xl lg:text-8xl font-bold text-white leading-none mb-4 tabular-nums group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-white/60 transition-all duration-500">
+                    <div className="text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-none mb-4 tabular-nums group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-white/60 transition-all duration-500">
                       <CounterAnimation value={stat.number} suffix={stat.suffix} />
                     </div>
                     <div className="text-white/40 text-sm lg:text-base uppercase tracking-wider group-hover:text-white/70 transition-colors duration-300">
@@ -682,15 +686,15 @@ export default function Home() {
                 <div className="flex items-baseline gap-4 mb-6">
                   <h3 className="text-3xl lg:text-4xl font-bold text-white">CHENNAI</h3>
                   <span className="text-xl text-white/60 tabular-nums">
-                    {new Date().toLocaleTimeString('en-US', { 
-                      timeZone: 'Asia/Kolkata', 
-                      hour: '2-digit', 
+                    {new Date().toLocaleTimeString('en-US', {
+                      timeZone: 'Asia/Kolkata',
+                      hour: '2-digit',
                       minute: '2-digit',
-                      hour12: false 
+                      hour12: false
                     })}
                   </span>
                 </div>
-                
+
                 <a
                   href="https://maps.app.goo.gl/1PUNCPG9p8V5w7Nq9"
                   target="_blank"
@@ -721,7 +725,7 @@ export default function Home() {
             <ScrollReveal delay={0.2}>
               <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-8 lg:p-10 rounded-2xl">
                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6">Connect With Us</h3>
-                
+
                 <div className="space-y-4">
                   {[
                     { name: 'LinkedIn', href: '#' },

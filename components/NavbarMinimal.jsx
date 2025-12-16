@@ -40,15 +40,14 @@ export default function NavbarMinimal() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 navbar-glass ${
-        isScrolled ? 'scrolled' : ''
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 navbar-glass ${isScrolled ? 'scrolled' : ''
+        }`}
     >
       <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
         <div className="flex items-center justify-between py-6">
           {/* Logo with Glass Effect */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="text-2xl font-bold text-white tracking-tight relative group"
           >
             <span className="relative z-10">MEO</span>
@@ -214,7 +213,7 @@ export default function NavbarMinimal() {
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 50 }}
-                    transition={{ 
+                    transition={{
                       delay: index * 0.1,
                       duration: 0.4,
                       ease: "easeOut"
@@ -222,7 +221,7 @@ export default function NavbarMinimal() {
                     className="group relative"
                     whileHover={{ x: 10 }}
                   >
-                    <span className="text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
+                    <span className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
                       {item.label}
                     </span>
                     {/* Underline */}
@@ -234,7 +233,7 @@ export default function NavbarMinimal() {
                     />
                   </motion.a>
                 ))}
-                
+
                 {/* CTA Button */}
                 <motion.a
                   href="#contact"

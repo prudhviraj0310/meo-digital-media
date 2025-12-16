@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const categories = ["ALL", "BRAND", "MARKETING", "PRODUCT", "DIGITAL"];
 
@@ -26,18 +27,17 @@ export default function WorkGrid({ projects }) {
             <h2 className="text-5xl lg:text-7xl font-bold text-white leading-tight max-w-3xl">
               Projects that define excellence
             </h2>
-            
+
             {/* Filter Buttons */}
             <div className="flex flex-wrap gap-4">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveFilter(category)}
-                  className={`px-6 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-300 border ${
-                    activeFilter === category
-                      ? "bg-white text-black border-white"
-                      : "bg-transparent text-white border-white/20 hover:border-white/60"
-                  }`}
+                  className={`px-6 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-300 border ${activeFilter === category
+                    ? "bg-white text-black border-white"
+                    : "bg-transparent text-white border-white/20 hover:border-white/60"
+                    }`}
                 >
                   {category}
                 </button>
@@ -70,10 +70,12 @@ export default function WorkGrid({ projects }) {
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   {/* Project Image */}
-                  <img
+                  <Image
                     src={project.image || `https://images.unsplash.com/photo-${1600000000000 + index}0-000000000000?q=80&w=1200&auto=format&fit=crop`}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
 
                   {/* Glass Overlay on Hover */}
