@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function NavbarMinimal() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   // Detect scroll
   useEffect(() => {
@@ -19,11 +22,26 @@ export default function NavbarMinimal() {
   }, []);
 
   // Smooth scroll function
-  const smoothScroll = (e, targetId) => {
+  const handleNavigation = (e, targetId) => {
     e.preventDefault();
-    const element = document.querySelector(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // If we are on the home page, scroll to the section
+    if (pathname === "/") {
+      const element = document.querySelector(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        setMobileMenuOpen(false);
+      }
+    } else {
+      // If not on home page, navigate to home page with hash
+      // We can just navigate to "/" if the target is #home (top)
+      // Or to "/#targetId" if it's a section
+
+      if (targetId === "#home") {
+        router.push("/");
+      } else {
+        router.push("/" + targetId);
+      }
       setMobileMenuOpen(false);
     }
   };
@@ -48,7 +66,7 @@ export default function NavbarMinimal() {
           {/* Logo with Glass Effect */}
           <a
             href="#home"
-            onClick={(e) => smoothScroll(e, "#home")}
+            onClick={(e) => handleNavigation(e, "#home")}
             className="text-2xl font-bold text-white tracking-tight relative group cursor-pointer"
           >
             <span className="relative z-10">MEO</span>
@@ -64,7 +82,7 @@ export default function NavbarMinimal() {
               <motion.a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => smoothScroll(e, item.href)}
+                onClick={(e) => handleNavigation(e, item.href)}
                 className="relative text-white/80 hover:text-white text-sm uppercase tracking-wider font-medium transition-colors group"
                 whileHover={{ y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -84,7 +102,7 @@ export default function NavbarMinimal() {
           <div className="hidden lg:block">
             <motion.a
               href="#contact"
-              onClick={(e) => smoothScroll(e, "#contact")}
+              onClick={(e) => handleNavigation(e, "#contact")}
               className="relative px-6 py-3 text-sm font-bold uppercase tracking-wider overflow-hidden group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -210,7 +228,7 @@ export default function NavbarMinimal() {
                   <motion.a
                     key={item.href}
                     href={item.href}
-                    onClick={(e) => smoothScroll(e, item.href)}
+                    onClick={(e) => handleNavigation(e, item.href)}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 50 }}
@@ -238,7 +256,7 @@ export default function NavbarMinimal() {
                 {/* CTA Button */}
                 <motion.a
                   href="#contact"
-                  onClick={(e) => smoothScroll(e, "#contact")}
+                  onClick={(e) => handleNavigation(e, "#contact")}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
