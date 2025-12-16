@@ -76,7 +76,7 @@ export default function HeroCinematicVideo({
 
       {/* Content Container - Above Video */}
       <motion.div
-        className="relative z-10 container-custom text-center text-white px-4 max-w-6xl py-16 md:py-20"
+        className="relative z-10 container-custom text-center text-white px-4 max-w-6xl pt-32 pb-16 md:py-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
