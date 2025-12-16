@@ -76,7 +76,7 @@ export default function HeroCinematicVideo({
 
       {/* Content Container - Above Video */}
       <motion.div
-        className="relative z-10 container-custom text-center text-white px-4 max-w-6xl pt-32 pb-16 md:py-20"
+        className="relative z-10 container-custom text-center text-white px-4 max-w-6xl pt-40 pb-32 md:py-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -155,7 +155,7 @@ export default function HeroCinematicVideo({
       {/* Scroll Indicator */}
       {showScrollIndicator && !shouldReduceMotion && (
         <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10"
+          className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 z-10"
           variants={scrollIndicatorVariants}
           initial="initial"
           animate="animate"

@@ -33,7 +33,7 @@ export default function CounterAnimation({ value, suffix = "", className = "" })
       <motion.span>{rounded}</motion.span>
       {hasPlus && <span>+</span>}
       {hasPercent && <span>%</span>}
-      {suffix && <span className="ml-1">{suffix}</span>}
+      {suffix && <span>{suffix}</span>}
     </span>
   );
 }
