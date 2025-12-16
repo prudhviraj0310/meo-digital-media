@@ -46,16 +46,17 @@ export default function NavbarMinimal() {
       <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
         <div className="flex items-center justify-between py-6">
           {/* Logo with Glass Effect */}
-          <Link
-            href="/"
-            className="text-2xl font-bold text-white tracking-tight relative group"
+          <a
+            href="#home"
+            onClick={(e) => smoothScroll(e, "#home")}
+            className="text-2xl font-bold text-white tracking-tight relative group cursor-pointer"
           >
             <span className="relative z-10">MEO</span>
             <motion.div
               className="absolute inset-0 -z-10 rounded-lg bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               whileHover={{ scale: 1.1 }}
             />
-          </Link>
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-10">
