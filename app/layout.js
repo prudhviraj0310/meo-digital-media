@@ -5,6 +5,13 @@ import { getOrganizationSchema, getWebsiteSchema } from "@/lib/seo";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://meodigitalmedia.com";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
