@@ -76,14 +76,14 @@ export default function HeroCinematicVideo({
 
       {/* Content Container - Above Video */}
       <motion.div
-        className="relative z-10 container-custom text-center text-white px-4 max-w-6xl pt-40 pb-32 md:py-20"
+        className="relative z-10 container-custom text-center text-white px-4 max-w-6xl pt-32 pb-24 sm:pt-36 sm:pb-28 md:py-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Main Headline */}
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.05] tracking-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 sm:mb-8 leading-[1.05] tracking-tight"
           variants={itemVariants}
           style={{
             textShadow: '0 4px 24px rgba(0, 0, 0, 0.5)',
@@ -94,7 +94,7 @@ export default function HeroCinematicVideo({
 
         {/* Subtitle */}
         <motion.p
-          className="text-lg md:text-xl lg:text-2xl mb-12 text-gray-100 max-w-3xl mx-auto font-light leading-relaxed"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-10 sm:mb-12 text-gray-100 max-w-3xl mx-auto font-light leading-relaxed"
           variants={itemVariants}
           style={{
             textShadow: '0 2px 12px rgba(0, 0, 0, 0.4)',
@@ -112,7 +112,7 @@ export default function HeroCinematicVideo({
             href={primaryCTA.href}
             variant="primary"
             size="lg"
-            className="w-full sm:w-auto min-w-[200px] md:min-w-[220px] !bg-white !text-black hover:!bg-gray-100 font-bold shadow-2xl hover:scale-105 transition-all duration-300 px-8 py-4"
+            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] md:min-w-[220px] !bg-white !text-black hover:!bg-gray-100 font-bold shadow-2xl hover:scale-105 transition-all duration-300 px-6 sm:px-8 py-4"
           >
             {primaryCTA.text}
           </Button>
@@ -121,7 +121,7 @@ export default function HeroCinematicVideo({
             href={secondaryCTA.href}
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto min-w-[200px] md:min-w-[220px] border-2 !border-white !text-white hover:!bg-white hover:!text-black backdrop-blur-sm font-bold hover:scale-105 transition-all duration-300 px-8 py-4"
+            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] md:min-w-[220px] border-2 !border-white !text-white hover:!bg-white hover:!text-black backdrop-blur-sm font-bold hover:scale-105 transition-all duration-300 px-6 sm:px-8 py-4"
           >
             {secondaryCTA.text}
           </Button>
@@ -141,7 +141,7 @@ export default function HeroCinematicVideo({
               key={index}
               className="text-center p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10"
             >
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-white">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-white">
                 {stat.value}
               </div>
               <div className="text-sm md:text-base text-gray-300 font-light">

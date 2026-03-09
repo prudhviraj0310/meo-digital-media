@@ -17,24 +17,24 @@ export default function WorkGrid({ projects }) {
 
   return (
     <section id="work" className="section-padding bg-black border-t border-white/10">
-      <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+      <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
         {/* Section Header */}
         <div className="mb-16">
           <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-8">
             RECENT WORK
           </span>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-5xl lg:text-7xl font-bold text-white leading-tight max-w-3xl">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight max-w-3xl">
               Projects that define excellence
             </h2>
 
             {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveFilter(category)}
-                  className={`px-6 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-300 border ${activeFilter === category
+                  className={`px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors duration-300 border ${activeFilter === category
                     ? "bg-white text-black border-white"
                     : "bg-transparent text-white border-white/20 hover:border-white/60"
                     }`}
@@ -110,11 +110,11 @@ export default function WorkGrid({ projects }) {
                 </div>
 
                 {/* Project Info with Glass Background */}
-                <div className="p-6 backdrop-blur-sm bg-black/20">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
+                <div className="p-5 sm:p-6 backdrop-blur-sm bg-black/20">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-white/60 text-base lg:text-lg leading-relaxed line-clamp-2 group-hover:text-white/80 transition-colors duration-300">
+                  <p className="text-white/60 text-sm sm:text-base lg:text-lg leading-relaxed line-clamp-3 sm:line-clamp-2 group-hover:text-white/80 transition-colors duration-300">
                     {project.description}
                   </p>
                 </div>
@@ -132,7 +132,7 @@ export default function WorkGrid({ projects }) {
         <div className="mt-20 text-center">
           <a
             href="/projects"
-            className="inline-flex items-center gap-3 px-8 py-5 bg-white text-black text-lg font-bold hover:bg-white/90 transition-colors duration-300"
+            className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 sm:py-5 bg-white text-black text-base sm:text-lg font-bold hover:bg-white/90 transition-colors duration-300"
           >
             <span>View All Projects</span>
             <svg
