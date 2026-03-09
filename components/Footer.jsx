@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 /**
@@ -39,11 +40,11 @@ export default function Footer() {
     <footer className="relative bg-black text-white border-t border-white/10 overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-purple-500/5 blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-blue-500/5 blur-[120px]" />
+        <div className="absolute bottom-0 left-[-10%] sm:left-1/4 w-[260px] h-[260px] sm:w-[500px] sm:h-[500px] rounded-full bg-purple-500/5 blur-[90px] sm:blur-[120px]" />
+        <div className="absolute bottom-0 right-[-10%] sm:right-1/4 w-[260px] h-[260px] sm:w-[500px] sm:h-[500px] rounded-full bg-blue-500/5 blur-[90px] sm:blur-[120px]" />
       </div>
 
-      <div className="relative container-custom mx-auto px-6 lg:px-16 max-w-7xl py-20">
+      <div className="relative container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl py-16 sm:py-20">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           {/* Column 1: Menu */}
@@ -173,22 +174,28 @@ export default function Footer() {
         {/* Branding Section */}
         <div className="border-t border-white/10 pt-12 pb-8">
           <div className="flex flex-col items-center text-center mb-8">
-            <Link href="/" className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              MEO<sup className="text-lg">®</sup>
+            <Link href="/" className="mb-4 inline-flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 px-5 py-3">
+              <Image
+                src="/logo.png"
+                alt="MEO Digital Media"
+                width={220}
+                height={76}
+                className="h-12 sm:h-14 w-auto object-contain"
+              />
             </Link>
-            <p className="text-white/40 text-sm max-w-md">
+            <p className="text-white/40 text-sm sm:text-base max-w-md">
               Creative-led strategic partner for modern companies who want to scale with speed and clarity.
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-1 text-white/40 text-xs">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-1 text-white/40 text-xs">
             <span>© {currentYear} MEO Digital Media.</span>
             <span>All rights reserved.</span>
           </div>
-          <div className="flex gap-6 text-white/40 text-xs uppercase tracking-wider">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/40 text-xs uppercase tracking-wider">
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>

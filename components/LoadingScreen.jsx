@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +37,7 @@ export default function LoadingScreen() {
           {/* Animated Gradient Background */}
           <div className="absolute inset-0">
             <motion.div
-              className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-purple-500/20 blur-[150px]"
+              className="absolute top-1/4 left-[-10%] sm:left-1/4 w-[260px] h-[260px] sm:w-[600px] sm:h-[600px] rounded-full bg-purple-500/20 blur-[110px] sm:blur-[150px]"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.5, 0.3],
@@ -48,7 +49,7 @@ export default function LoadingScreen() {
               }}
             />
             <motion.div
-              className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-blue-500/20 blur-[150px]"
+              className="absolute bottom-1/4 right-[-10%] sm:right-1/4 w-[260px] h-[260px] sm:w-[600px] sm:h-[600px] rounded-full bg-blue-500/20 blur-[110px] sm:blur-[150px]"
               animate={{
                 scale: [1.2, 1, 1.2],
                 opacity: [0.5, 0.3, 0.5],
@@ -68,23 +69,28 @@ export default function LoadingScreen() {
               initial={{ opacity: 0, letterSpacing: "0.5em" }}
               animate={{ opacity: 1, letterSpacing: "0.1em" }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="mb-16"
+              className="mb-12 sm:mb-16"
             >
-              <h1 className="text-7xl lg:text-9xl font-black text-white">
-                MEO<sup className="text-3xl">®</sup>
-              </h1>
+              <Image
+                src="/logo.png"
+                alt="MEO Digital Media"
+                width={260}
+                height={90}
+                priority
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain"
+              />
             </motion.div>
 
             {/* Counter */}
             <div className="mb-8">
-              <motion.div className="text-8xl lg:text-9xl font-black text-white tabular-nums">
+              <motion.div className="text-6xl sm:text-7xl lg:text-9xl font-black text-white tabular-nums">
                 <motion.span>{rounded}</motion.span>
                 <span className="text-white/40">%</span>
               </motion.div>
             </div>
 
             {/* Glassmorphic Progress Bar */}
-            <div className="w-80 lg:w-[500px] relative mb-8">
+            <div className="w-64 sm:w-80 lg:w-[500px] relative mb-8">
               <div className="h-1 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
                 <motion.div
                   className="h-full bg-gradient-to-r from-white via-white/80 to-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.5)]"
@@ -103,7 +109,7 @@ export default function LoadingScreen() {
                   transition={{ duration: 0.6 }}
                   className="text-center"
                 >
-                  <p className="text-xl lg:text-2xl text-white/60 tracking-[0.2em] uppercase">
+                    <p className="text-sm sm:text-xl lg:text-2xl text-white/60 tracking-[0.12em] sm:tracking-[0.2em] uppercase">
                     Creative-Led Digital Experiences
                   </p>
                 </motion.div>

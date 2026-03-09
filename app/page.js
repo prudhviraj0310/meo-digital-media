@@ -94,26 +94,26 @@ export default function Home() {
 
       {/* About Snapshot Section */}
       <section className="section-padding bg-black">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
           <ScrollReveal>
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
               <div>
-                <h2 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+                <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
                   Expressive and enduring digital experiences.
                 </h2>
               </div>
               <div>
-                <p className="text-xl lg:text-2xl text-white/60 leading-relaxed mb-8">
+                <p className="text-lg sm:text-xl lg:text-2xl text-white/60 leading-relaxed mb-6 sm:mb-8">
                   We are MEO Digital Media - your 360° digital partner. We blend creativity, technology, and strategy to help brands grow smarter, faster, and stronger.
                 </p>
-                <p className="text-lg lg:text-xl text-white/50 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-white/50 leading-relaxed">
                   Through collaboration with companies across industries, we build scalable brand systems and products that leverage emerging behaviors and technologies, and ultimately unlock potential.
                 </p>
               </div>
             </div>
 
             {/* About Image Grid */}
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
               <div className="lg:col-span-2 aspect-[16/9] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop"
@@ -135,11 +135,11 @@ export default function Home() {
 
       {/* Services Section - Minimal */}
       <section id="services" className="section-padding bg-black border-t border-white/10">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
           <ScrollReveal>
             <div className="mb-20">
               <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-4">SERVICES</span>
-              <AnimatedHeading className="text-5xl lg:text-7xl font-bold text-white leading-tight max-w-4xl">
+              <AnimatedHeading className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight max-w-4xl">
                 Our Offerings
               </AnimatedHeading>
             </div>
@@ -155,7 +155,7 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {/* Glassmorphic Container */}
-                  <div className="relative backdrop-blur-lg bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
+                  <div className="relative backdrop-blur-lg bg-white/5 border border-white/10 p-5 sm:p-8 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]">
                     {/* Service Image */}
                     <div className="aspect-[16/9] overflow-hidden mb-6 rounded-xl relative">
                       <img
@@ -175,10 +175,10 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="text-base lg:text-lg text-white/60 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                    <p className="text-sm sm:text-base lg:text-lg text-white/60 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                       {service.description}
                     </p>
 
@@ -199,18 +199,18 @@ export default function Home() {
 
       {/* Case Studies Section - MakeReign Style */}
       <section id="case-studies" className="section-padding bg-black border-t border-white/10">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
           <ScrollReveal>
             <div className="mb-20">
               <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-4">RECENT LAUNCHES</span>
-              <AnimatedHeading className="text-5xl lg:text-7xl font-bold text-white leading-tight">
+              <AnimatedHeading className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
                 Work and Engagements
               </AnimatedHeading>
             </div>
           </ScrollReveal>
 
           {/* Case Study Grid - Alternating Layout */}
-          <div className="space-y-32">
+          <div className="space-y-16 sm:space-y-24 lg:space-y-32">
             {[
               {
                 client: "LUXURY FASHION BRAND",
@@ -270,11 +270,11 @@ export default function Home() {
                     transition={{ duration: 0.8 }}
                   >
                     {/* Glassmorphic Container */}
-                    <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-10 lg:p-12 rounded-2xl hover:border-white/20 transition-all duration-500">
+                    <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-6 sm:p-8 lg:p-12 rounded-2xl hover:border-white/20 transition-all duration-500">
                       <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-6">
                         {caseStudy.client}
                       </span>
-                      <h3 className="text-3xl lg:text-5xl font-bold text-white leading-tight mb-8">
+                      <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight mb-6 sm:mb-8">
                         {caseStudy.title}
                       </h3>
                       <motion.a
@@ -309,11 +309,11 @@ export default function Home() {
 
       {/* Press Releases / Insights Section */}
       <section id="insights" className="section-padding bg-black border-t border-white/10">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
           <ScrollReveal>
             <div className="mb-20">
               <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-4">LATEST NEWS</span>
-              <AnimatedHeading className="text-5xl lg:text-7xl font-bold text-white leading-tight">
+              <AnimatedHeading className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
                 Insights & Press
               </AnimatedHeading>
             </div>
@@ -378,14 +378,14 @@ export default function Home() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-8">
+                    <div className="p-5 sm:p-8">
                       <div className="text-white/40 text-sm uppercase tracking-wider mb-4">
                         {article.date}
                       </div>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
                         {article.title}
                       </h3>
-                      <p className="text-white/60 text-base leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                      <p className="text-white/60 text-sm sm:text-base leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                         {article.excerpt}
                       </p>
                     </div>
@@ -417,7 +417,7 @@ export default function Home() {
 
       {/* Client Success Section */}
       <section className="section-padding bg-black border-t border-white/10">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
           <ScrollReveal>
             <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-12">INDUSTRIES WE SERVE</span>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
@@ -429,8 +429,8 @@ export default function Home() {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     {/* Glassmorphic Container */}
-                    <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl p-8 flex items-center justify-center aspect-square hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
-                      <span className="text-white/40 text-base lg:text-lg font-bold uppercase tracking-wide group-hover:text-white transition-all duration-300 group-hover:scale-110 text-center">
+                    <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-xl p-5 sm:p-8 flex items-center justify-center aspect-square hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
+                      <span className="text-white/40 text-sm sm:text-base lg:text-lg font-bold uppercase tracking-wide group-hover:text-white transition-all duration-300 group-hover:scale-110 text-center">
                         {industry}
                       </span>
                     </div>
@@ -447,7 +447,7 @@ export default function Home() {
 
       {/* Stats Section - Minimal */}
       <section id="about" className="section-padding bg-black border-t border-white/10">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {[
               { number: '200+', label: 'Projects Delivered' },
@@ -462,8 +462,8 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {/* Glassmorphic Card */}
-                  <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl p-8 lg:p-10 hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
-                    <div className="text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-none mb-4 tabular-nums group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-white/60 transition-all duration-500">
+                  <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl p-5 sm:p-8 lg:p-10 hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
+                    <div className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-none mb-4 tabular-nums group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-white/60 transition-all duration-500">
                       <CounterAnimation value={stat.number} suffix={stat.suffix} />
                     </div>
                     <div className="text-white/40 text-sm lg:text-base uppercase tracking-wider group-hover:text-white/70 transition-colors duration-300">
@@ -501,7 +501,7 @@ export default function Home() {
 
       {/* Testimonials Section - Clean */}
       <section className="section-padding bg-black border-t border-white/10">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-6xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-6xl">
           <ScrollReveal>
             <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-12">CLIENT STORIES</span>
           </ScrollReveal>
@@ -534,8 +534,8 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {/* Glassmorphic Container */}
-                  <div className="backdrop-blur-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-3xl p-10 lg:p-12 hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
-                    <p className="text-2xl lg:text-4xl font-normal text-white leading-relaxed mb-8 relative z-10">
+                  <div className="backdrop-blur-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-12 hover:border-white/30 transition-all duration-500 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.15)]">
+                    <p className="text-xl sm:text-2xl lg:text-4xl font-normal text-white leading-relaxed mb-8 relative z-10">
                       "{testimonial.quote}"
                     </p>
                     <div className="flex items-center gap-4 relative z-10">
@@ -573,11 +573,11 @@ export default function Home() {
 
       {/* Contact Section - Let's Work Together Style */}
       <section id="contact" className="section-padding bg-black border-t border-white/10">
-        <div className="container-custom mx-auto px-6 lg:px-16 max-w-7xl">
+        <div className="container-custom mx-auto px-4 sm:px-6 lg:px-16 max-w-7xl">
           <ScrollReveal>
             <div className="text-center mb-20">
               <span className="text-white/40 text-sm uppercase tracking-[0.2em] block mb-8">GET IN TOUCH</span>
-              <h2 className="text-5xl lg:text-7xl font-bold text-white mb-12 leading-tight">
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-10 sm:mb-12 leading-tight">
                 Let's Work Together
               </h2>
             </div>
@@ -635,19 +635,19 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {/* Glassmorphic Card */}
-                  <div className="relative backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-10 lg:p-12 rounded-2xl hover:border-white/30 transition-all duration-500 hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.2)] min-h-[280px] flex flex-col">
+                  <div className="relative backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-6 sm:p-8 lg:p-12 rounded-2xl hover:border-white/30 transition-all duration-500 hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.2)] min-h-[240px] sm:min-h-[280px] flex flex-col">
                     {/* Icon */}
                     <div className="text-white/60 mb-6 group-hover:text-white group-hover:scale-110 transition-all duration-300">
                       {option.icon}
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-300">
                       {option.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-white/60 text-base lg:text-lg leading-relaxed mb-6 group-hover:text-white/80 transition-colors duration-300">
+                    <p className="text-white/60 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 group-hover:text-white/80 transition-colors duration-300">
                       {option.description}
                     </p>
 
@@ -682,10 +682,10 @@ export default function Home() {
           {/* Location & Time Section */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 pt-12 border-t border-white/10">
             <ScrollReveal>
-              <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-8 lg:p-10 rounded-2xl">
+              <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-6 sm:p-8 lg:p-10 rounded-2xl">
                 <div className="flex items-baseline gap-4 mb-6">
-                  <h3 className="text-3xl lg:text-4xl font-bold text-white">CHENNAI</h3>
-                  <span className="text-xl text-white/60 tabular-nums">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">CHENNAI</h3>
+                  <span className="text-lg sm:text-xl text-white/60 tabular-nums">
                     {new Date().toLocaleTimeString('en-US', {
                       timeZone: 'Asia/Kolkata',
                       hour: '2-digit',
@@ -723,8 +723,8 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-8 lg:p-10 rounded-2xl">
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6">Connect With Us</h3>
+              <div className="backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 p-6 sm:p-8 lg:p-10 rounded-2xl">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-6">Connect With Us</h3>
 
                 <div className="space-y-4">
                   {[
