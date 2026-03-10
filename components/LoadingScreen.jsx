@@ -72,7 +72,7 @@ export default function LoadingScreen() {
               className="mb-12 sm:mb-16"
             >
               <Image
-                src="/logo.png"
+                src="/logo-gold.png"
                 alt="MEO Digital Media"
                 width={260}
                 height={90}

@@ -85,7 +85,7 @@ export default function NavbarMinimal() {
             className="relative group flex items-center cursor-pointer rounded-xl"
           >
             <Image
-              src="/logo.png"
+              src="/logo-gold.png"
               alt="MEO Digital Media"
               width={160}
               height={56}
@@ -224,7 +224,7 @@ export default function NavbarMinimal() {
               {/* Close Button */}
               <div className="flex justify-between items-center p-4 sm:p-6">
                 <Image
-                  src="/logo.png"
+                  src="/logo-gold.png"
                   alt="MEO Digital Media"
                   width={144}
                   height={48}
