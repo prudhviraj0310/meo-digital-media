@@ -176,7 +176,7 @@ export default function Footer() {
           <div className="flex flex-col items-center text-center mb-8">
             <Link href="/" className="mb-4 inline-flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 px-5 py-3">
               <Image
-                src="/logo.png"
+                src="/logo-gold.png"
                 alt="MEO Digital Media"
                 width={220}
                 height={76}
